@@ -143,34 +143,37 @@ export default function Home() {
 						{/* end header */}
 						{/* start content */}
 						<div id='content'>
-							<div
-								className='full-width intro'
-								style={{
-									height: '100vh',
-								}}>
+							<div className='full-width intro'>
 								<div className='full-height not-completely-full'>
 									<div className='fixed'>
+										{/* <figure
+											className='background-image3 parallax parallax-banner'
+											style={{ transform: 'translate3d(0px, 0px, 0px)' }}
+										/> */}
 										<video
+											className='background-image3 parallax parallax-banner'
 											autoPlay
 											muted
 											loop
-											className=' parallax parallax-banner'>
-											<source src='./network-12716.mp4' type='video/mp4' />
+											style={{
+												// width: '100%',
+												// height: 'auto',
+												transform: 'translate3d(0px, 0px, 0px)',
+											}}>
+											<source src='./Low res video.mp4' type='video/mp4' />
 										</video>
-										{/* <video src={vedio}></video> */}
-										{/* <figure className='background-image3 parallax parallax-banner' /> */}
 									</div>
 									<div className='full-height-wrapper white-text'>
 										<div className='parent'>
 											<div className='bottom'>
 												<div className='container'>
-													<div className='animatedblock delay2 animatedUp'>
+													<div className='animatedblock delay2 animatedUp in-view'>
 														<div className='col-lg-6 col-md-offset-1 col-md-7'>
-															<div className='banner-textblock'>
+															<div
+																className='banner-textblock'
+																style={{ top: '0px', opacity: 1 }}>
 																<p className='large'> </p>
-																<h1
-																	className='header col-lg-11'
-																	style={{ zIndex: '1000' }}>
+																<h1 className='header col-lg-11'>
 																	Its all about illusion you create
 																</h1>
 															</div>
@@ -183,6 +186,7 @@ export default function Home() {
 									</div>
 								</div>
 							</div>
+
 							<section className='white'>
 								<div className='container clearfix'>
 									<div className='col-md-3 col-md-offset-1 col-sm-6'>
@@ -228,7 +232,6 @@ export default function Home() {
 										style={{
 											display: 'flex ',
 											flexWrap: 'wrap',
-											
 										}}>
 										<div className='element clearfix col-sm-6 home travel p-5'>
 											<a
