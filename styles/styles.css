@@ -500,10 +500,10 @@
  }
 
  h1#logo a {
- 	background: url(../public/bg-logo.png) center no-repeat;
- 	background-size: 85px 30px;
- 	width: 85px;
- 	height: 30px;
+ 	background: url(../public/340763197_5999126313527838_7363627470835044405_n-removebg-preview.png) center no-repeat;
+ 	background-size: 170px 100px;
+ 	width: 170px;
+ 	height: 100px;
  	text-indent: -9999px;
  	display: block;
  }
@@ -1144,11 +1144,7 @@
  	min-height: 100vh;
  }
 
- @media (max-width: 600px) {
- 	.min-full-height {
- 		max-height: 80vh;
- 	}
- }
+
 
  div.full-height {
  	height: 100vh !important;

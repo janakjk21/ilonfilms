@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
-// import '@/styles/bootstrap.min.css';
 import '@/styles/contact.css';
-// import '@/styles/flexslider.css';
+import '@/styles/flexslider.css';
 import '@/styles/font-awesome.min.css';
 // import '@/styles/jquery.fancybox.css';
 import '@/styles/styles.css';

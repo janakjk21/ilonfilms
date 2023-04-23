@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import ReactPlayer from 'react-player';
-
+import { AiOutlineFacebook } from 'react-icons/ai';
 export default function Home() {
 	return (
 		<>
@@ -15,92 +15,6 @@ export default function Home() {
 			</Head>
 			<main>
 				<div>
-					<div id='nav-wrapper'>
-						{/* start main nav */}
-						<nav id='main-nav'>
-							<ul className='clearfix'>
-								<li>
-									{' '}
-									<a href='#' className='sub-nav-toggle selected'>
-										Demos
-									</a>
-									<ul className='sub-nav hidden'>
-										<li>
-											{' '}
-											<a href='index.html' className='selected'>
-												Agency
-											</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='restaurant.html'>Restaurant</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='fitness.html'>Fitness</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='photography.html'>Photography</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='architect.html'>Architect</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='medical.html'>Medical</a>{' '}
-										</li>
-									</ul>
-								</li>
-								<li>
-									{' '}
-									<a href='portfolio.html'>Portfolio</a>
-								</li>
-								<li>
-									{' '}
-									<a href='about.html'>About</a>{' '}
-								</li>
-								<li>
-									{' '}
-									<a href='blog.html'>Blog</a>{' '}
-								</li>
-								<li>
-									{' '}
-									<a href='#' className='sub-nav-toggle'>
-										Features
-									</a>
-									<ul className='sub-nav hidden'>
-										<li>
-											{' '}
-											<a href='case-study-1.html'>Case Study 1</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='case-study-2.html'>Case Study 2</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='post-1.html'>Post</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='pricing.html'>Pricing</a>{' '}
-										</li>
-										<li>
-											{' '}
-											<a href='job-offers.html'>Job Offers</a>{' '}
-										</li>
-									</ul>
-								</li>
-								<li>
-									{' '}
-									<a href='contact.html'>Contact</a>{' '}
-								</li>
-							</ul>
-						</nav>
-						{/* end main nav */}
-					</div>
 					<div id='content-overlay' />
 					<div id='wrap'>
 						<div id='menu-button'>
@@ -119,32 +33,16 @@ export default function Home() {
 							<h1 id='logo'>
 								<a href='index.html'>Ilon Films</a>
 							</h1>
-							<ul className='social-list clearfix'>
-								<li>
-									{' '}
-									<a href='#'>
-										<i className='fa fa-behance' />
-									</a>{' '}
-								</li>
-								<li>
-									{' '}
-									<a href='#'>
-										<i className='fa fa-dribbble' />
-									</a>{' '}
-								</li>
-								<li>
-									{' '}
-									<a href='#'>
-										<i className='fa fa-xing' />
-									</a>{' '}
-								</li>
-							</ul>
+							<ul className='social-list clearfix'></ul>
 						</header>
 						{/* end header */}
 						{/* start content */}
 						<div id='content'>
+							{/* Hero page */}
 							<div className='full-width intro'>
-								<div className='full-height not-completely-full'>
+								<div
+									className='full-height not-completely-full min-full-height'
+									style={{ height: '100%' }}>
 									<div className='fixed'>
 										{/* <figure
 											className='background-image3 parallax parallax-banner'
@@ -156,14 +54,13 @@ export default function Home() {
 											muted
 											loop
 											style={{
-												// width: '100%',
-												// height: 'auto',
 												transform: 'translate3d(0px, 0px, 0px)',
+												height: '100vh',
 											}}>
 											<source src='./Low res video.mp4' type='video/mp4' />
 										</video>
 									</div>
-									<div className='full-height-wrapper white-text'>
+									{/* <div className='full-height-wrapper white-text'>
 										<div className='parent'>
 											<div className='bottom'>
 												<div className='container'>
@@ -183,10 +80,10 @@ export default function Home() {
 											</div>
 										</div>
 										<div className='overlay' />
-									</div>
+									</div> */}
 								</div>
 							</div>
-
+							{/* Content section about the componey  */}
 							<section className='white'>
 								<div className='container clearfix'>
 									<div className='col-md-3 col-md-offset-1 col-sm-6'>
@@ -220,90 +117,7 @@ export default function Home() {
 									</div>
 								</div>
 							</section>
-							<section>
-								<div className='container clearfix'>
-									<div className='col-lg-12 white-text centered extra-padding-bottom'>
-										<h2 className='header'>Recent Work</h2>
-									</div>
-								</div>
-								<div className='container clearfix'>
-									<div
-										id='container'
-										style={{
-											display: 'flex ',
-											flexWrap: 'wrap',
-										}}>
-										<div className='element clearfix col-sm-6 home travel p-5'>
-											<a
-												href='case-study-2.html'
-												data-title='Image Title'
-												className='transition-link'>
-												{' '}
-												<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-												<div className='title-holder right'>
-													<h3>Wireless AirPods</h3>
-													<p className='large'>Apple</p>
-												</div>
-												<div className='overlay' />
-											</a>{' '}
-										</div>
-										<div className='element clearfix col-sm-6 home travel p-5'>
-											{' '}
-											<a
-												href='case-study-2.html'
-												data-title='Image Title'
-												className='transition-link'>
-												{' '}
-												<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-												<div className='title-holder right'>
-													<h3>Wireless AirPods</h3>
-													<p className='large'>Apple</p>
-												</div>
-												<div className='overlay' />
-											</a>{' '}
-										</div>
-										<div className='element clearfix col-sm-6 home travel p-5'>
-											{' '}
-											<a
-												href='case-study-1.html'
-												data-title='Image Title'
-												className='transition-link'>
-												{' '}
-												<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-												<div className='title-holder'>
-													<h3>Just do it!</h3>
-													<p className='large'>Nike</p>
-												</div>
-												<div className='overlay' />
-											</a>{' '}
-										</div>
-										<div className='element clearfix col-sm-6 home travel p-5'>
-											{' '}
-											<a
-												href='case-study-2.html'
-												data-title='Image Title'
-												className='transition-link'>
-												{' '}
-												<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-												<div className='title-holder right'>
-													<h3>Wireless AirPods</h3>
-													<p className='large'>Apple</p>
-												</div>
-												<div className='overlay' />
-											</a>{' '}
-										</div>
-									</div>
-								</div>
-								<div className='container clearfix'>
-									<div className='col-lg-12 white-text centered'>
-										<p>
-											<a href='portfolio.html' title className='arrow'>
-												View All
-											</a>
-										</p>
-									</div>
-								</div>
-							</section>
+							<RecentWork></RecentWork>
 						</div>
 
 						{/* end content */}
@@ -328,3 +142,128 @@ export default function Home() {
 		</>
 	);
 }
+
+const RecentWork = () => {
+	return (
+		<section>
+			<div className='container clearfix'>
+				<div className='col-lg-12 white-text centered extra-padding-bottom'>
+					<h2 className='header'>Recent Work</h2>
+				</div>
+			</div>
+			<div className='container clearfix'>
+				<div className='row'>
+					<div className='element clearfix col-sm-6 home travel'>
+						{' '}
+						<a
+							href='https://www.youtube.com/watch?v=_h6aWfAhiis'
+							data-title='Image Title'
+							className='transition-link'>
+							{' '}
+							{/* <img src='images/work-single-1.jpg' alt='' /> */}
+							<ReactPlayer
+								url='https://www.youtube.com/watch?v=_h6aWfAhiis'
+								playing
+								muted
+								loop
+							/>
+							<div className='title-holder'>
+								<h3>Just do it!</h3>
+								<p className='large'>Nike</p>
+							</div>
+							<div className='overlay' />
+						</a>{' '}
+					</div>
+					<div className='element clearfix col-sm-6 home travel'>
+						{' '}
+						<a
+							href='https://www.youtube.com/watch?v=_h6aWfAhiis'
+							data-title='Image Title'
+							className='transition-link'>
+							{' '}
+							<ReactPlayer
+								url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+								light
+							/>{' '}
+							<div className='title-holder right'>
+								<h3>Wireless AirPods</h3>
+								<p className='large'>Apple</p>
+							</div>
+							<div className='overlay' />
+						</a>{' '}
+					</div>
+					<div className='element clearfix col-sm-6 home travel'>
+						{' '}
+						<a
+							href='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+							data-title='Image Title'
+							className='transition-link'>
+							{' '}
+							<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />{' '}
+							<div className='title-holder'>
+								<h3>Magazine Cover</h3>
+								<p className='large'>Inventory</p>
+							</div>
+							<div className='overlay' />
+						</a>{' '}
+					</div>
+					<div className='element clearfix col-sm-6 home travel'>
+						{' '}
+						<a
+							href='https://www.youtube.com/watch?v=_h6aWfAhiis'
+							data-title='Image Title'
+							className='transition-link'>
+							{' '}
+							<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />{' '}
+							<div className='title-holder right'>
+								<h3>Seller Admin</h3>
+								<p className='large'>Shopify</p>
+							</div>
+							<div className='overlay' />
+						</a>{' '}
+					</div>
+				</div>
+			</div>
+			<div className='container clearfix'>
+				<div className='col-lg-12 white-text centered'>
+					<p>
+						<a href='portfolio.html' title className='arrow'>
+							View All
+						</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	);
+};
+
+const SingleWork = () => {
+	return (
+		<div className='element clearfix col-sm-6 home travel'>
+			{' '}
+			<a
+				href='case-study-1.html'
+				data-title='Image Title'
+				className='transition-link'>
+				{' '}
+				<video
+					autoPlay
+					muted
+					loop
+					style={{
+						transform: 'translate3d(0px, 0px, 0px)',
+					}}>
+					<source
+						src='https://www.youtube.com/watch?v=h2gEQIlWULQ'
+						type='video/mp4'
+					/>
+				</video>
+				<div className='title-holder right'>
+					<h3>Just do it!</h3>
+					<p className='large'>Nike</p>
+				</div>
+				<div className='overlay' />
+			</a>{' '}
+		</div>
+	);
+};
