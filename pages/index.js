@@ -4,7 +4,15 @@ import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import ReactPlayer from 'react-player';
 import { AiOutlineFacebook } from 'react-icons/ai';
+import { Sidebar, Menu, MenuItem, useProSidebar } from 'react-pro-sidebar';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 export default function Home() {
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 	return (
 		<>
 			<Head>
@@ -15,13 +23,49 @@ export default function Home() {
 			</Head>
 			<main>
 				<div>
+					<div id='nav-wrapper'>
+						<Offcanvas
+							show={show}
+							onHide={handleClose}
+							style={{ backgroundColor: '#000000' }}>
+							<Offcanvas.Header closeButton closeVariant='white'>
+								<Offcanvas.Title></Offcanvas.Title>
+							</Offcanvas.Header>
+							<Offcanvas.Body>
+								<nav id='main-nav'>
+									<ul className='clearfix'>
+										<li>
+											{' '}
+											<a href='#' className='sub-nav-toggle selected'>
+												Home
+											</a>
+										</li>
+										<li>
+											{' '}
+											<a href='portfolio.html'>Portfolio</a>
+										</li>
+
+										<li>
+											{' '}
+											<a href='blog.html'>Blog</a>{' '}
+										</li>
+
+										<li>
+											{' '}
+											<a href='contact.html'>Contact</a>{' '}
+										</li>
+									</ul>
+								</nav>
+							</Offcanvas.Body>
+						</Offcanvas>
+					</div>
+
 					<div id='content-overlay' />
 					<div id='wrap'>
 						<div id='menu-button'>
 							<div className='centralizer'>
 								<div className='cursor'>
-									<div id='nav-button'>
-										{' '}
+									<div id='nav-button' onClick={handleShow}>
 										<span className='nav-bar' /> <span className='nav-bar' />{' '}
 										<span className='nav-bar' />{' '}
 									</div>
@@ -123,13 +167,13 @@ export default function Home() {
 						{/* end content */}
 						<footer id='footer'>
 							<div className='container clearfix'>
-								<p className='alignleft'>© 2018, Belton Theme.</p>
+								{/* <p className='alignleft'>© 2018, Belton Theme.</p> */}
 								<p className='alignright'>
 									Made with <i className='fa fa-heart' /> by{' '}
 									<a
-										href='http://www.weibergmedia.com'
+										href='https://janaksapkotagroup.tech/'
 										data-title='Premium HTML5 Website Templates'>
-										weibergmedia
+										Janak sapkota
 									</a>
 									.
 								</p>
