@@ -147,10 +147,10 @@ export default function Home() {
 										</p> */}
 										<p className='large'>
 											We believe that every story deserves to be told, and that
-											film is the most powerful medium to do so. Whether it's a
-											personal story of triumph and resilience, or a larger
-											social issue that demands attention, we strive to create
-											films that give voice to the voiceless.
+											film is the most powerful medium to do so. Whether
+											it&#39;s a personal story of triumph and resilience, or a
+											larger social issue that demands attention, we strive to
+											create films that give voice to the voiceless.
 										</p>
 										<p className='large'>
 											Our team of experienced team of filmmakers and artists
