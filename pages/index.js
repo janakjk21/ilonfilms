@@ -132,6 +132,7 @@ export default function Home() {
 								</div>
 							</section>
 							<RecentWork></RecentWork>
+							<YouTubePlayer videoId='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'></YouTubePlayer>
 							{/* <Contatctus></Contatctus> */}
 						</div>
 
@@ -156,57 +157,54 @@ const RecentWork = () => {
 				<div className='row'>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
-						<a
+						{/* <a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 							data-title='Image Title'
-							className='transition-link'>
-							{' '}
-							{/* <img src='images/work-single-1.jpg' alt='' /> */}
-							<ReactPlayer
-								url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-								playing
-								muted
-								loop
-							/>
-							<div className='title-holder'>
-								<h3>NOT YOU</h3>
-								<p className='large'> AGAIN</p>
-							</div>
-							<div className='overlay' />
-						</a>{' '}
+							className='transition-link'> */}{' '}
+						{/* <img src='images/work-single-1.jpg' alt='' /> */}
+						<ReactPlayer
+							url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
+							playing
+							muted
+							loop
+						/>
+						<div className='title-holder'>
+							<h3>NOT YOU</h3>
+							<p className='large'> AGAIN</p>
+						</div>
+						<div className='overlay' />
+						{/* </a>{' '} */}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
-						<a
+						{/* <a
 							href='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
 							data-title='Image Title'
-							className='transition-link'>
-							{' '}
-							<ReactPlayer
-								url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
-								light
-							/>{' '}
-							<div className='title-holder right'>
-								<h3>FEAR</h3>
-								<p className='large'>ONE MINUTE SHORT FILM</p>
-							</div>
-							<div className='overlay' />
-						</a>{' '}
+							className='transition-link'> */}{' '}
+						<ReactPlayer
+							url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
+							light
+						/>{' '}
+						<div className='title-holder right'>
+							<h3>FEAR</h3>
+							<p className='large'>ONE MINUTE SHORT FILM</p>
+						</div>
+						<div className='overlay' />
+						{/* </a>{' '} */}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
-						<a
+						{/* <a
 							href='https://www.youtube.com/watch?v=C3OKSJd3w6c'
 							data-title='Image Title'
-							className='transition-link'>
-							{' '}
-							<ReactPlayer url='https://www.youtube.com/watch?v=C3OKSJd3w6c' />{' '}
-							<div className='title-holder'>
-								<h3>Magazine Cover</h3>
-								<p className='large'>Inventory</p>
-							</div>
-							<div className='overlay' />
-						</a>{' '}
+							className='transition-link'> */}{' '}
+						<ReactPlayer url='https://www.youtube.com/watch?v=C3OKSJd3w6c' />{' '}
+						<div className='title-holder'>
+							<h3>Magazine Cover</h3>
+							<p className='large'>Inventory</p>
+						</div>
+						<div className='overlay' />
+						{/* </a>{' '} */}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
@@ -214,15 +212,13 @@ const RecentWork = () => {
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 							data-title='Image Title'
 							className='transition-link'>
-							{' '}
-							<YouTubePlayer videoId='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'></YouTubePlayer>
 							<ReactPlayer url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU' />{' '}
 							<div className='title-holder right'>
 								<h3>Not you</h3>
 								<p className='large'> Again</p>
 							</div>
 							<div className='overlay' />
-						</a>{' '}
+						</a>
 					</div>
 				</div>
 			</div>
@@ -239,7 +235,7 @@ const RecentWork = () => {
 	);
 };
 
-const YouTubePlayer=({ videoId }) =>{
+const YouTubePlayer = ({ videoId }) => {
 	console.log(videoId, 'This is video id  ');
 	const [isHovering, setIsHovering] = useState(false);
 
@@ -268,4 +264,4 @@ const YouTubePlayer=({ videoId }) =>{
 			{/* Add any fallback content here */}
 		</div>
 	);
-}
+};

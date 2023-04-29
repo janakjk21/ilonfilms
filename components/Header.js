@@ -32,7 +32,7 @@ const Header = () => {
 					</h1>
 					{/* <ul className='social-list clearfix'></ul> */}
 				</header>
-				<div style={{ textAlign: 'center' }}></div>
+				<div></div>
 				{/* <link
 					rel='stylesheet'
 					href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'
@@ -45,25 +45,29 @@ const Header = () => {
 				<Offcanvas
 					isOpen={isOpen}
 					toggle={toggle}
-					style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-					<nav id='main-nav'>
-						<ul className='clearfix' style={{ paddingTop: '20%' }}>
+					style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', maxWidth: '300px' }}>
+					{/* start main nav */}
+					<nav id='main-nav' style={{ paddingTop: '40%' }}>
+						<ul className='clearfix' style={{ padding: '100px 75px' }}>
 							<li>
 								{' '}
-								<Link href='/' className='sub-nav-toggle'></Link>
+								<Link href='/'> Home</Link>
 							</li>
 
 							<li>
 								{' '}
-								<Link href='/'>Home</Link>{' '}
+								<Link href='/contactus'>Contact</Link>
 							</li>
-
+							<li>
+								<Link href='/'>Blog</Link>
+							</li>
 							<li>
 								{' '}
-								<Link href='/contactus'>Contact</Link>{' '}
+								<Link href='/'>portfolio</Link>
 							</li>
 						</ul>
 					</nav>
+					{/* end main nav */}
 				</Offcanvas>
 				{/* sidebar */}
 			</div>

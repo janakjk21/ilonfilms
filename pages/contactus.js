@@ -102,19 +102,19 @@ export default function Contactus() {
 								</form>
 							</div>
 							<div className='col-md-3 col-sm-6'>
-								<h2 className='header'>Enquiries</h2>
+								<h2 className='header'>Inquiries</h2>
 								<p>
-									Visit us in ilons films or drop us a message. Well get back to
-									you as soon as possible.{' '}
+									Visit us at Ilon films or drop a message. We&#39;ll get back
+									to you as soon as possible
 								</p>
 
-								<p className='large' style={{ padding: '0px',margin:'0px' }}>
+								<p className='large' style={{ padding: '0px', margin: '0px' }}>
 									mail@ilonfilms.com
 								</p>
-								<p className='large' style={{ padding: '0px',margin:'0px' }}>
+								<p className='large' style={{ padding: '0px', margin: '0px' }}>
 									+977 9851242779
 								</p>
-								<p className='large' style={{ padding: '0px' ,margin:'0px'}}>
+								<p className='large' style={{ padding: '0px', margin: '0px' }}>
 									Lalitpur,Nepal
 								</p>
 								<a href='https://www.facebook.com/ilonfilms'>
