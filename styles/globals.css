@@ -1,0 +1,164 @@
+.navbar-custom {
+    height: 170px;
+    padding: 20px 20px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cairo:400,700=arabic');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sidebar-toggle {
+    animation: bounce 2s ease-in-out infinite;
+    float: right;
+    background: transparent;
+    color: #fdfdfd;
+    border: none;
+    font-size: 1.5rem;
+    margin: 1em;
+    cursor: pointer;
+    outline: none;
+    z-index: 999;
+    /* position: absolute; */
+ 
+    position: fixed;
+    top: 50%;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.close-btn {
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    color: white;
+    transition: 1s ease all;
+    cursor: pointer;
+    outline: none;
+    z-index: 999
+}
+
+.close-btn:hover {
+    color: grey;
+    transform: rotate(360deg);
+}
+
+.logo {
+    justify-self: center;
+    align-items: center;
+    height: 40px;
+    margin: 0.6em 1em;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links a {
+    display: block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    color: white;
+    transition: 1s all ease;
+}
+
+.links a:hover {
+    color: grey;
+    transform: scale(1.2);
+}
+
+.social-icons {
+    justify-self: center;
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: white;
+    transition: 1s all ease;
+}
+
+.social-icons a:hover {
+    color: grey;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #19171B;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    transition: 1s all ease-in-out;
+    transform: translate(100%);
+}
+
+.show-sidebar {
+    transform: translate(0);
+}
+
+@media screen and (max-width: 676px) {
+    .sidebar {
+        width: 400px;
+    }
+
+    .sidebar-toggle {
+        animation: bounce 10s ease-in-out infinite;
+        float: left;
+        background: transparent;
+        color: #19171B;
+        border: none;
+        font-size: 1.5rem;
+        margin: 1em;
+        cursor: pointer;
+        outline: none;
+        z-index: 999;
+        /* position: absolute; */
+        color: rgb(255, 255, 255);
+        position: fixed;
+        top: 5%;
+        right:0%;
+    }
+}

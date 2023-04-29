@@ -1,8 +1,6 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Link from 'next/link';
 
 export default function Contactus() {
 	const [name, setName] = useState('');
@@ -41,47 +39,10 @@ export default function Contactus() {
 			});
 	};
 
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
 	return (
 		<div>
-			<div id='nav-wrapper'>
-				<Offcanvas
-					show={show}
-					onHide={handleClose}
-					style={{ backgroundColor: '#000000' }}>
-					<Offcanvas.Header closeButton closeVariant='white'>
-						<Offcanvas.Title></Offcanvas.Title>
-					</Offcanvas.Header>
-					<Offcanvas.Body>
-						<nav id='main-nav'>
-							<ul className='clearfix'>
-								<li>
-									{' '}
-									<Link href='/' className='sub-nav-toggle selected'>
-										Home
-									</Link>
-								</li>
+			<div id='nav-wrapper'></div>
 
-								<li>
-									{' '}
-									<Link href='/contactus'>Contact</Link>{' '}
-								</li>
-							</ul>
-						</nav>
-					</Offcanvas.Body>
-				</Offcanvas>
-			</div>
-			<div id='menu-button'>
-				<div className='centralizer'>
-					<div className='cursor'>
-						<div id='nav-button' onClick={handleShow}>
-							<span className='nav-bar' /> <span className='nav-bar' />{' '}
-							<span className='nav-bar' />{' '}
-						</div>
-					</div>
-				</div>
-			</div>
 			<div id='content'>
 				<div className='full-width intro'>
 					<div
@@ -146,10 +107,16 @@ export default function Contactus() {
 									Visit us in ilons films or drop us a message. Well get back to
 									you as soon as possible.{' '}
 								</p>
-								<div className='break' />
-								<p className='large'>mail@ilonfilms.com</p>
-								<p className='large'>+977 9851242779</p>
-								<p className='small below-text'>Lalitpur,Nepal</p>
+
+								<p className='large' style={{ padding: '0px',margin:'0px' }}>
+									mail@ilonfilms.com
+								</p>
+								<p className='large' style={{ padding: '0px',margin:'0px' }}>
+									+977 9851242779
+								</p>
+								<p className='large' style={{ padding: '0px' ,margin:'0px'}}>
+									Lalitpur,Nepal
+								</p>
 								<a href='https://www.facebook.com/ilonfilms'>
 									{' '}
 									<FaFacebook size={45} style={{ padding: '5px' }}></FaFacebook>

@@ -7,10 +7,14 @@ import '@/styles/styles.css';
 import '@/styles/responsive.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ProSidebarProvider } from 'react-pro-sidebar';
+import Layout from '@/components/layout';
 export default function App({ Component, pageProps }) {
 	return (
 		<ProSidebarProvider>
-			<Component {...pageProps} />
+			<Layout>
+				{' '}
+				<Component {...pageProps} />
+			</Layout>
 		</ProSidebarProvider>
 	);
 }

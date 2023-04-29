@@ -64,19 +64,14 @@ export default function Home() {
 							<div className='centralizer'>
 								<div className='cursor'>
 									<div id='nav-button' onClick={handleShow}>
-										<span className='nav-bar' /> <span className='nav-bar' />{' '}
-										<span className='nav-bar' />{' '}
+										{/* <span className='nav-bar' /> <span className='nav-bar' />{' '}
+										<span className='nav-bar' />{' '} */}
 									</div>
 								</div>
 							</div>
 						</div>
 						{/* start header */}
-						<header id='header' className='clearfix'>
-							<h1 id='logo'>
-								<a href='index.html'>Ilon Films</a>
-							</h1>
-							<ul className='social-list clearfix'></ul>
-						</header>
+
 						{/* end header */}
 						{/* start content */}
 						<div id='content'>
@@ -141,29 +136,6 @@ export default function Home() {
 						</div>
 
 						{/* end content */}
-						<footer id='footer'>
-							<div className='container clearfix'>
-								<p className='alignleft'>
-									<a href='https://www.facebook.com/ilonfilms'>
-										{' '}
-										<FaFacebook
-											size={45}
-											style={{ padding: '5px' }}></FaFacebook>
-									</a>
-									<a href='https://www.instagram.com/ilonfilms/?fbclid=IwAR3bjxQCtB8wtN-mtJ_ON1nDMCRepiGGdViz2m6MK0kPvBDGa-FIsKxiZGI'>
-										{' '}
-										<FaInstagram
-											size={45}
-											style={{ padding: '5px' }}></FaInstagram>
-									</a>
-									<a href='https://www.youtube.com/@ilonfilms6432'>
-										{' '}
-										<FaYoutube size={45} style={{ padding: '5px' }}></FaYoutube>
-									</a>
-								</p>
-								{/* <p className='alignright'><></> */}.{/* </p> */}
-							</div>
-						</footer>
 					</div>
 					{/* end wrap */}
 				</div>
@@ -243,10 +215,11 @@ const RecentWork = () => {
 							data-title='Image Title'
 							className='transition-link'>
 							{' '}
+							<YouTubePlayer videoId='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'></YouTubePlayer>
 							<ReactPlayer url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU' />{' '}
 							<div className='title-holder right'>
-								<h3>COVID</h3>
-								<p className='large'> in Nepal</p>
+								<h3>Not you</h3>
+								<p className='large'> Again</p>
 							</div>
 							<div className='overlay' />
 						</a>{' '}
@@ -266,134 +239,33 @@ const RecentWork = () => {
 	);
 };
 
-const Contatctus = () => {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [message, setMessage] = useState('');
-	const form = useRef();
-	const sendEmail = (e) => {
-		e.preventDefault();
+const YouTubePlayer=({ videoId }) =>{
+	console.log(videoId, 'This is video id  ');
+	const [isHovering, setIsHovering] = useState(false);
 
-		// Validate the form data
-		if (!name) {
-			return alert('Please enter your name.');
-		}
-		if (!email) {
-			return alert('Please enter your email address.');
-		}
-		if (!message) {
-			return alert('Please enter your message.');
-		}
-
-		// Send the email
-		emailjs
-			.sendForm(
-				'service_i562jcd',
-				'template_nfb7url',
-				form.current,
-				'7boS3gFmIgil9xako'
-			)
-			.then((result) => {
-				console.log(result.text);
-			})
-			.catch((error) => {
-				console.log(error.text);
-			});
+	const handleMouseEnter = () => {
+		setIsHovering(true);
 	};
-	return (
-		<div id='content'>
-			<div className='full-width intro'>
-				<div className='full-height not-completely-full'>
-					<div className='fixed'>
-						<div id='map' className='parallax parallax-banner' />
-					</div>
-					<div className='full-height-wrapper white-text'>
-						<div className='parent'>
-							<div className='bottom'>
-								<div className='container'>
-									<div className='animatedblock delay2 animatedUp'>
-										<div className='col-md-7 col-md-offset-1'>
-											<div className='banner-textblock'>
-												<p className='large'>Contact</p>
-												<h1 className='header'>
-													Belton Creative Group
-													<br />
-													Neusser Str. 255
-													<br />
-													Köln
-												</h1>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className='overlay contact-map-overlay' />
-					</div>
-				</div>
-			</div>
-			<section className='white'>
-				<div className='container clearfix'>
-					<div className='row'>
-						{' '}
-						<div className='col-md-7 col-md-offset-1 col-sm-6 extra-padding-right'>
-							<form ref={form} onSubmit={sendEmail} className='form-part'>
-								<label>Name</label>
-								<input
-									type='text'
-									name='name'
-									placeholder='Name'
-									value={name}
-									onChange={(e) => setName(e.target.value)}
-								/>
-								<label>Email</label>
-								<input
-									type='email'
-									name='email'
-									placeholder='Email'
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-								/>
-								<label>Message</label>
-								<textarea
-									name='message'
-									cols='40'
-									rows='3'
-									placeholder='Message'
-									value={message}
-									onChange={(e) => setMessage(e.target.value)}
-								/>
-								<input type='submit' value='Submit' className='button' />
-							</form>
-						</div>
-						<div className='col-md-3 col-sm-6'>
-							<h2 className='header'>Enquiries</h2>
-							<p>
-								Visit us in ilons films or drop us a message. Well get back to
-								you as soon as possible.{' '}
-							</p>
-							<div className='break' />
-							<p className='large'>mail@ilonfilms.com</p>
-							<p className='large'>+977 9851242779</p>
-							<p className='small below-text'>Lalitpur,Nepal</p>
-							<a href='https://www.facebook.com/ilonfilms'>
-								{' '}
-								<FaFacebook size={45} style={{ padding: '5px' }}></FaFacebook>
-							</a>
-							<a href='https://www.instagram.com/ilonfilms/?fbclid=IwAR3bjxQCtB8wtN-mtJ_ON1nDMCRepiGGdViz2m6MK0kPvBDGa-FIsKxiZGI'>
-								{' '}
-								<FaInstagram size={45} style={{ padding: '5px' }}></FaInstagram>
-							</a>
-							<a href='https://www.youtube.com/@ilonfilms6432'>
-								{' '}
-								<FaYoutube size={45} style={{ padding: '5px' }}></FaYoutube>
-							</a>
 
-							{/* <p className='small below-text'>phone</p> */}
-						</div>
-					</div>
-				</div>
-			</section>
+	const handleMouseLeave = () => {
+		setIsHovering(false);
+	};
+
+	const playerOpts = {
+		height: '360',
+		width: '640',
+		playing: true,
+	};
+
+	return (
+		<div
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+			style={{ position: 'relative' }}>
+			{isHovering && (
+				<ReactPlayer url={videoId} className='video-player' {...playerOpts} />
+			)}
+			{/* Add any fallback content here */}
 		</div>
 	);
-};
+}
