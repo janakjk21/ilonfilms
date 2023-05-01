@@ -2,18 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import logo from '../public/340763197_5999126313527838_7363627470835044405_n.jpg';
-import {
-	Navbar,
-	NavbarBrand,
-	NavbarToggler,
-	Collapse,
-	Nav,
-	NavItem,
-	NavLink,
-	Offcanvas,
-	OffcanvasBody,
-	OffcanvasHeader,
-} from 'reactstrap';
+import { Offcanvas } from 'reactstrap';
 import { FaBars } from 'react-icons/fa';
 
 const Header = () => {
@@ -26,7 +15,7 @@ const Header = () => {
 				<header
 					id='header'
 					className='clearfix'
-					style={{ paddingLeft: '60px' }}>
+					style={{ paddingLeft: '30px' }}>
 					<h1 id='logo'>
 						<Link href='./'>Ilon Films</Link>
 					</h1>
@@ -47,6 +36,15 @@ const Header = () => {
 					toggle={toggle}
 					style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', maxWidth: '300px' }}>
 					{/* start main nav */}
+					<header
+						id='header'
+						className='clearfix'
+						style={{ paddingLeft: '30px' }}>
+						<h1 id='logo'>
+							<Link href='./'>Ilon Films</Link>
+						</h1>
+						{/* <ul className='social-list clearfix'></ul> */}
+					</header>
 					<nav id='main-nav' style={{ paddingTop: '40%' }}>
 						<ul className='clearfix' style={{ padding: '100px 75px' }}>
 							<li>
@@ -56,14 +54,14 @@ const Header = () => {
 
 							<li>
 								{' '}
-								<Link href='/contactus'>Contact</Link>
+								<Link href='/portfolio'>portfolio</Link>
 							</li>
 							<li>
-								<Link href='/'>Blog</Link>
+								<Link href='/blog'>Blog</Link>
 							</li>
 							<li>
 								{' '}
-								<Link href='/'>portfolio</Link>
+								<Link href='/contactus'>Contact</Link>{' '}
 							</li>
 						</ul>
 					</nav>

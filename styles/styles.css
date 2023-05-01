@@ -496,14 +496,14 @@
  	position: relative;
  	height: 170px;
  	width: 170px;
- 	padding: 50 !important;
- 	margin: 20 auto;
+ 	padding: 10 !important;
+ 	margin: 10 auto;
  	margin-right: 40px;
  	display: block
  }
 
  h1#logo a {
- 	background: url(../public/ilon\ films\ grey.png) left no-repeat;
+ 	background: url(../public/ilon\ films\ white.png) left no-repeat;
  	background-size: 170px 170px;
  	width: 170px;
  	height: 170px;
@@ -801,6 +801,7 @@
  #main-nav ul li {
  	-webkit-transform: translateX(-20px);
  	transform: translateX(-20px);
+
  	/* opacity: 0; */
  	-webkit-transition: all 0.33s ease-in-out 0.2s;
  	transition: all 0.33s ease-in-out 0.2s;
@@ -871,13 +872,13 @@
 
  #main-nav ul li ul {
  	padding-top: 6px;
+
  }
 
- #main-nav ul li ul li a {
+ #main-nav ul li {
  	font-size: 13px !important;
  	border: 0;
- 	padding: 3px 0;
- 	padding-left: 15px;
+ 	padding-top: 13%;
  }
 
  #main-nav ul li ul li:last-child a {

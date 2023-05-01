@@ -6,12 +6,13 @@ import styles from '@/styles/Home.module.css';
 import { AiOutlineFacebook } from 'react-icons/ai';
 import { GiBoxingGloveSurprise } from 'react-icons/gi';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import emailjs from '@emailjs/browser';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import YouTube from 'react-youtube';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 export default function Home() {
 	const [show, setShow] = useState(false);
@@ -26,38 +27,14 @@ export default function Home() {
 					name='description'
 					content='We are a team of filmmakers and artists who believe that every story deserves to be told. We use film as a powerful medium to give voice to the voiceless, to tell stories of triumph and resilience, and to raise awareness of important social issues. Our films are visually stunning, deeply engaging, thought-provoking, and influential. We strive to create films that make a difference in the world.'></meta>
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<link rel='icon' href='/favicon.ico' />
+				<link
+					rel='icon'
+					href='/favicon.ico'
+					style={{ height: '50px', width: '50px' }}
+				/>
 			</Head>
 			<main>
 				<div>
-					<div id='nav-wrapper'>
-						<Offcanvas
-							show={show}
-							onHide={handleClose}
-							style={{ backgroundColor: '#000000' }}>
-							<Offcanvas.Header closeButton closeVariant='white'>
-								<Offcanvas.Title></Offcanvas.Title>
-							</Offcanvas.Header>
-							<Offcanvas.Body>
-								<nav id='main-nav'>
-									<ul className='clearfix'>
-										<li>
-											{' '}
-											<Link href='/' className='sub-nav-toggle selected'>
-												Home
-											</Link>
-										</li>
-
-										<li>
-											{' '}
-											<Link href='/contactus'>Contact</Link>{' '}
-										</li>
-									</ul>
-								</nav>
-							</Offcanvas.Body>
-						</Offcanvas>
-					</div>
-
 					<div id='content-overlay' />
 					<div id='wrap'>
 						<div id='menu-button'>
@@ -132,7 +109,7 @@ export default function Home() {
 								</div>
 							</section>
 							<RecentWork></RecentWork>
-							<YouTubePlayer videoId='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'></YouTubePlayer>
+
 							{/* <Contatctus></Contatctus> */}
 						</div>
 
@@ -157,54 +134,52 @@ const RecentWork = () => {
 				<div className='row'>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
-						{/* <a
+						<a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 							data-title='Image Title'
-							className='transition-link'> */}{' '}
-						{/* <img src='images/work-single-1.jpg' alt='' /> */}
-						<ReactPlayer
-							url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-							playing
-							muted
-							loop
-						/>
-						<div className='title-holder'>
-							<h3>NOT YOU</h3>
-							<p className='large'> AGAIN</p>
-						</div>
-						<div className='overlay' />
-						{/* </a>{' '} */}
+							className='transition-link'>
+							{' '}
+							{/* <img src='images/work-single-1.jpg' alt='' /> */}
+							<ReactPlayer
+								url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
+								playing
+								muted
+								loop
+							/>
+							<div className='title-holder'>
+								<h3>NOT YOU</h3>
+								<p className='large'> AGAIN</p>
+							</div>
+							<div className='overlay' />
+						</a>{' '}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
-						{/* <a
-							href='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
-							data-title='Image Title'
-							className='transition-link'> */}{' '}
-						<ReactPlayer
-							url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
-							light
-						/>{' '}
+						* <VideoPlayer videoId='3oJ2WXg0E8g'></VideoPlayer>
+						{/* <ReactPlayer
+								url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
+								light
+							/>{' '} */}
 						<div className='title-holder right'>
 							<h3>FEAR</h3>
 							<p className='large'>ONE MINUTE SHORT FILM</p>
 						</div>
 						<div className='overlay' />
-						{/* </a>{' '} */}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
-						{/* <a
+						<a
 							href='https://www.youtube.com/watch?v=C3OKSJd3w6c'
 							data-title='Image Title'
-							className='transition-link'> */}{' '}
-						<ReactPlayer url='https://www.youtube.com/watch?v=C3OKSJd3w6c' />{' '}
-						<div className='title-holder'>
-							<h3>Magazine Cover</h3>
-							<p className='large'>Inventory</p>
-						</div>
-						<div className='overlay' />
-						{/* </a>{' '} */}
+							className='transition-link'>
+							{' '}
+							<ReactPlayer url='https://www.youtube.com/watch?v=C3OKSJd3w6c' />{' '}
+							<div className='title-holder'>
+								<h3>Magazine Cover</h3>
+								<p className='large'>Inventory</p>
+							</div>
+							<div className='overlay' />
+						</a>{' '}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
@@ -235,33 +210,33 @@ const RecentWork = () => {
 	);
 };
 
-const YouTubePlayer = ({ videoId }) => {
-	console.log(videoId, 'This is video id  ');
-	const [isHovering, setIsHovering] = useState(false);
+function VideoPlayer({ videoId }) {
+	const playerRef = useRef(null);
 
-	const handleMouseEnter = () => {
-		setIsHovering(true);
-	};
-
-	const handleMouseLeave = () => {
-		setIsHovering(false);
-	};
-
-	const playerOpts = {
-		height: '360',
-		width: '640',
-		playing: true,
+	const handleHover = (event) => {
+		const player = playerRef.current;
+		if (event.type === 'mouseenter') {
+			player.play();
+		} else if (event.type === 'mouseleave') {
+			player.pause();
+		}
 	};
 
 	return (
 		<div
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}
-			style={{ position: 'relative' }}>
-			{isHovering && (
-				<ReactPlayer url={videoId} className='video-player' {...playerOpts} />
-			)}
-			{/* Add any fallback content here */}
+			className='video-container'
+			onMouseEnter={handleHover}
+			onMouseLeave={handleHover}>
+			<iframe
+				ref={playerRef}
+				width='560'
+				height='315'
+				src={`https://www.youtube.com/embed/${videoId}`}
+				title='YouTube video player'
+				frameBorder='0'
+				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+				allowFullScreen
+			/>
 		</div>
 	);
-};
+}

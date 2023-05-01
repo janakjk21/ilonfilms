@@ -108,16 +108,14 @@ export default function Contactus() {
 									to you as soon as possible
 								</p>
 
-								<p className='large' style={{ padding: '0px', margin: '0px' }}>
+								<p style={{ padding: '0px', margin: '0px',fontSize:"17px" }}>
 									mail@ilonfilms.com
 								</p>
-								<p className='large' style={{ padding: '0px', margin: '0px' }}>
-									+977 9851242779
-								</p>
-								<p className='large' style={{ padding: '0px', margin: '0px' }}>
-									Lalitpur,Nepal
-								</p>
-								<a href='https://www.facebook.com/ilonfilms'>
+								<p style={{ padding: '0px', margin: '0px' }}>+977 9851242779</p>
+								<p style={{ padding: '0px', margin: '0px' }}>Lalitpur,Nepal</p>
+								<a
+									href='https://www.facebook.com/ilonfilms'
+									style={{ marginTop: '10px' }}>
 									{' '}
 									<FaFacebook size={45} style={{ padding: '5px' }}></FaFacebook>
 								</a>
