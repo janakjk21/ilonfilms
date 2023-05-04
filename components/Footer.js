@@ -12,8 +12,8 @@ export default function Footer() {
 					alt='logo'
 					height='170px'
 					style={{
-						maxHeight: '170px',
-						maxWidth: '170px',
+						width: '170px',
+						height: '170px',
 						backgroundColor: '#000000',
 					}}
 				/>
