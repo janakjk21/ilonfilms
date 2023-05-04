@@ -2,21 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaPhone, FaYoutube } from 'react-icons/fa';
-import icons from '../public/ilon films white.png';
 export default function Footer() {
 	return (
 		<footer className='footer-distributed'>
 			<div className='footer-left'>
-				<Image
-					src={icons}
-					alt='logo'
-					height='170px'
-					style={{
-						width: '170px',
-						height: '170px',
-						backgroundColor: '#000000',
-					}}
-				/>
+				<h1 id='footer'>
+					<Link href='./'>Ilon Films</Link>
+				</h1>
 			</div>
 			<div className='footer-center'>
 				<div>
