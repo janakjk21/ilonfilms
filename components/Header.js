@@ -26,10 +26,11 @@ const Header = () => {
 					rel='stylesheet'
 					href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'
 				/> */}
-				<button className='sidebar-toggle'>
+				{!isOpen?(<button className='sidebar-toggle'>
 					{/* <i className='fas fa-bars' /> */}
 					<FaBars className='fas fa-bars' size={30} onClick={toggle}></FaBars>
-				</button>
+				</button>):<></>}
+				
 
 				<Offcanvas
 					isOpen={isOpen}
