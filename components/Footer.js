@@ -9,7 +9,8 @@ export default function Footer() {
 			<div className='footer-left'>
 				<Image
 					src={icons}
-					alt=''
+					alt='logo'
+					height='170px'
 					style={{
 						maxHeight: '170px',
 						maxWidth: '170px',

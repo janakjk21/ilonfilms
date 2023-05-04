@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { Alert } from 'reactstrap';
+import Head from 'next/head';
 
 export default function Contactus() {
 	const [name, setName] = useState('');
@@ -43,6 +44,18 @@ export default function Contactus() {
 
 	return (
 		<div>
+			<Head>
+				<title>Ilon Films</title>
+				<meta
+					name='description'
+					content='We are a team of filmmakers and artists who believe that every story deserves to be told. We use film as a powerful medium to give voice to the voiceless, to tell stories of triumph and resilience, and to raise awareness of important social issues. Our films are visually stunning, deeply engaging, thought-provoking, and influential. We strive to create films that make a difference in the world.'></meta>
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
+				<link
+					rel='icon'
+					href='/favicon.ico'
+					style={{ height: '50px', width: '50px' }}
+				/>
+			</Head>
 			<div id='nav-wrapper'></div>
 
 			<div id='content'>

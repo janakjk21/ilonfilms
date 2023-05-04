@@ -136,7 +136,7 @@ const RecentWork = () => {
 						{' '}
 						<a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-							data-title='Image Title'
+						
 							className='transition-link'>
 							{' '}
 							{/* <img src='images/work-single-1.jpg' alt='' /> */}
@@ -185,7 +185,7 @@ const RecentWork = () => {
 						{' '}
 						<a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-							data-title='Image Title'
+							
 							className='transition-link'>
 							<ReactPlayer url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU' />{' '}
 							<div className='title-holder right'>
@@ -232,8 +232,8 @@ function VideoPlayer({ videoId }) {
 				width='560'
 				height='315'
 				src={`https://www.youtube.com/embed/${videoId}`}
-				title='YouTube video player'
-				frameBorder='0'
+			
+			
 				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 				allowFullScreen
 			/>
