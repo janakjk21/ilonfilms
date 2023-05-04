@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaPhone, FaYoutube } from 'react-icons/fa';
-import icons from '../public/ilon films white.png';
+import icons from './public/ilon films white.png';
 export default function Footer() {
 	return (
 		<footer className='footer-distributed'>
