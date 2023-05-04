@@ -81,7 +81,7 @@ export default function Home() {
 								<div className='container clearfix'>
 									<div className='col-md-3 col-md-offset-1 col-sm-6'>
 										<p className='large'></p>
-										<h4>Why do we film? </h4>
+										<h4 style={{ fontWeight: 'bold' }}>Why do we film? </h4>
 
 										<div className='break' />
 									</div>

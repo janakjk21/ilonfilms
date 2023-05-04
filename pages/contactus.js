@@ -1,35 +1,37 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { Alert } from 'reactstrap';
 
 export default function Contactus() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
-
+	const [error, setError] = useState('');
 	const [show, setShow] = useState(false);
+
 	const form = useRef();
 	const sendEmail = (e) => {
 		e.preventDefault();
 
 		// Validate the form data
 		if (!name) {
-			return alert('Please enter your name.');
+			setError('Please enter your name.');
 		}
 		if (!email) {
-			return alert('Please enter your email address.');
+			setError('Please enter your email address.');
 		}
 		if (!message) {
-			return alert('Please enter your message.');
+			setError('Please enter your message.');
 		}
 
 		// Send the email
 		emailjs
 			.sendForm(
-				'service_i562jcd',
-				'template_nfb7url',
+				'service_bb5glpp',
+				'template_015rtlb',
 				form.current,
-				'7boS3gFmIgil9xako'
+				'r-JGgMEOgVHiQdyT4'
 			)
 			.then((result) => {
 				console.log(result.text);
@@ -98,21 +100,37 @@ export default function Contactus() {
 										value={message}
 										onChange={(e) => setMessage(e.target.value)}
 									/>
+									{error ? <Alert color='danger'> {error}</Alert> : <></>}
 									<input type='submit' value='Submit' className='button' />
 								</form>
 							</div>
-							<div className='col-md-3 col-sm-6'>
+							<div className='col-md-3 col-sm-6' style={{ paddingLeft: '5%' }}>
 								<h2 className='header'>Inquiries</h2>
-								<p>
+								<p style={{ fontSize: '1.3rem' }}>
 									Visit us at Ilon films or drop a message. We&#39;ll get back
 									to you as soon as possible
 								</p>
 
-								<p style={{ padding: '0px', margin: '0px',fontSize:"17px" }}>
+								<p
+									style={{
+										padding: '0px',
+										margin: '0px',
+										fontSize: '1.3rem',
+									}}>
 									mail@ilonfilms.com
 								</p>
-								<p style={{ padding: '0px', margin: '0px' }}>+977 9851242779</p>
-								<p style={{ padding: '0px', margin: '0px' }}>Lalitpur,Nepal</p>
+								<p
+									style={{ padding: '0px', margin: '0px', fontSize: '1.3rem' }}>
+									+977 9851242779
+								</p>
+								<p
+									style={{
+										padding: '0px',
+
+										fontSize: '1.3rem',
+									}}>
+									Lalitpur,Nepal
+								</p>
 								<a
 									href='https://www.facebook.com/ilonfilms'
 									style={{ marginTop: '10px' }}>

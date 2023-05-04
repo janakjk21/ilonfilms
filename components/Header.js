@@ -34,7 +34,7 @@ const Header = () => {
 				<Offcanvas
 					isOpen={isOpen}
 					toggle={toggle}
-					style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', maxWidth: '300px' }}>
+					style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', maxWidth: '280px' }}>
 					{/* start main nav */}
 					<header
 						id='header'
