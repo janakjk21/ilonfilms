@@ -136,7 +136,6 @@ const RecentWork = () => {
 						{' '}
 						<a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-						
 							className='transition-link'>
 							{' '}
 							{/* <img src='images/work-single-1.jpg' alt='' /> */}
@@ -154,17 +153,19 @@ const RecentWork = () => {
 						</a>{' '}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
-						{' '}
-						* <VideoPlayer videoId='3oJ2WXg0E8g'></VideoPlayer>
-						{/* <ReactPlayer
+						<a
+							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
+							className='transition-link'>
+							<ReactPlayer
 								url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
 								light
-							/>{' '} */}
-						<div className='title-holder right'>
-							<h3>FEAR</h3>
-							<p className='large'>ONE MINUTE SHORT FILM</p>
-						</div>
-						<div className='overlay' />
+							/>{' '}
+							<div className='title-holder right'>
+								<h3>FEAR</h3>
+								<p className='large'>ONE MINUTE SHORT FILM</p>
+							</div>
+							<div className='overlay' />
+						</a>
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
@@ -185,7 +186,6 @@ const RecentWork = () => {
 						{' '}
 						<a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-							
 							className='transition-link'>
 							<ReactPlayer url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU' />{' '}
 							<div className='title-holder right'>
@@ -209,34 +209,3 @@ const RecentWork = () => {
 		</section>
 	);
 };
-
-function VideoPlayer({ videoId }) {
-	const playerRef = useRef(null);
-
-	const handleHover = (event) => {
-		const player = playerRef.current;
-		if (event.type === 'mouseenter') {
-			player.play();
-		} else if (event.type === 'mouseleave') {
-			player.pause();
-		}
-	};
-
-	return (
-		<div
-			className='video-container'
-			onMouseEnter={handleHover}
-			onMouseLeave={handleHover}>
-			<iframe
-				ref={playerRef}
-				width='560'
-				height='315'
-				src={`https://www.youtube.com/embed/${videoId}`}
-			
-			
-				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-				allowFullScreen
-			/>
-		</div>
-	);
-}
