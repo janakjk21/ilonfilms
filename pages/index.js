@@ -158,19 +158,23 @@ const RecentWork = () => {
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
 						{/* * <ReactPlayer videoId='3oJ2WXg0E8g'></ReactPlayer> */}
-						<div className='player-wrapper'>
-							<ReactPlayer
-								className='react-player'
-								url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
-								light
-								width='100%'
-							/>{' '}
-						</div>
-						<div className='title-holder right'>
-							<h3>FEAR</h3>
-							<p className='large'>ONE MINUTE SHORT FILM</p>
-						</div>
-						<div className='overlay' />
+						<a
+							href='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
+							className='transition-link'>
+							<div className='player-wrapper'>
+								<ReactPlayer
+									className='react-player'
+									url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
+									width='100%'
+									light
+								/>{' '}
+							</div>
+							<div className='title-holder right'>
+								<h3>FEAR</h3>
+								<p className='large'>ONE MINUTE SHORT FILM</p>
+							</div>
+							<div className='overlay' />
+						</a>
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
@@ -184,6 +188,7 @@ const RecentWork = () => {
 									url='https://www.youtube.com/watch?v=C3OKSJd3w6c'
 									className='react-player'
 									width='100%'
+									light
 								/>{' '}
 							</div>
 							<div className='title-holder'>
@@ -203,6 +208,7 @@ const RecentWork = () => {
 								<ReactPlayer
 									url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 									className='react-player'
+									light
 								/>{' '}
 							</div>
 
