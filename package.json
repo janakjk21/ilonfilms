@@ -25,5 +25,8 @@
     "react-sidebar": "^3.0.2",
     "react-youtube": "^10.1.0",
     "reactstrap": "^9.1.9"
+  },
+  "devDependencies": {
+    "video.js": "^8.3.0"
   }
 }

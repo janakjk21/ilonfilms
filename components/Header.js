@@ -26,11 +26,14 @@ const Header = () => {
 					rel='stylesheet'
 					href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'
 				/> */}
-				{!isOpen?(<button className='sidebar-toggle'>
-					{/* <i className='fas fa-bars' /> */}
-					<FaBars className='fas fa-bars' size={30} onClick={toggle}></FaBars>
-				</button>):<></>}
-				
+				{!isOpen ? (
+					<button className='sidebar-toggle'>
+						{/* <i className='fas fa-bars' /> */}
+						<FaBars className='fas fa-bars' size={30} onClick={toggle}></FaBars>
+					</button>
+				) : (
+					<></>
+				)}
 
 				<Offcanvas
 					isOpen={isOpen}
@@ -50,19 +53,28 @@ const Header = () => {
 						<ul className='clearfix' style={{ padding: '100px 75px' }}>
 							<li>
 								{' '}
-								<Link href='/'> Home</Link>
+								<Link href='/' onClick={toggle}>
+									{' '}
+									Home
+								</Link>
 							</li>
 
 							<li>
 								{' '}
-								<Link href='/portfolio'>portfolio</Link>
+								<Link href='/portfolio' onClick={toggle}>
+									portfolio
+								</Link>
 							</li>
 							<li>
-								<Link href='/blog'>Blog</Link>
+								<Link href='/blog' onClick={toggle}>
+									Blog
+								</Link>
 							</li>
 							<li>
 								{' '}
-								<Link href='/contactus'>Contact</Link>{' '}
+								<Link href='/contactus' onClick={toggle}>
+									Contact
+								</Link>{' '}
 							</li>
 						</ul>
 					</nav>

@@ -335,6 +335,14 @@ a {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+
+    .footer-distributed .footer-icons a {
+
+
+        padding-left: 10%;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
 }
 
 

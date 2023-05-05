@@ -2411,7 +2411,7 @@
  	width: 100%;
  	z-index: 98;
  	position: relative;
- 	background: #000;
+ 	background: #ffffff;
  }
 
  #footer.white {
@@ -2793,10 +2793,34 @@
  }
 
  h1#footer a {
- 	background: url(../public/ilon\ films\ white.png) left no-repeat;
+ 	background: url(../public/ilon\ films\ black\ small.png) left no-repeat;
  	background-size: 170px 170px;
  	width: 170px;
  	height: 170px;
  	text-indent: -9999px;
  	display: block;
+ }
+
+ @media (max-width: 767px) {
+ 	.row {
+ 		flex-direction: column;
+ 	}
+
+ 	.reactplayer {
+ 		width: 300px;
+ 	}
+ }
+
+ .player-wrapper {
+ 	position: relative;
+ 	padding-top: 56.25%;
+ 	padding: "20px";
+
+ 	/* Player ratio: 100 / (1280 / 720) */
+ }
+
+ .react-player {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
  }

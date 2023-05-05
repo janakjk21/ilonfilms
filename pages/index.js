@@ -13,6 +13,7 @@ import emailjs from '@emailjs/browser';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import YouTube from 'react-youtube';
+import { Col, Row } from 'reactstrap';
 const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 export default function Home() {
 	const [show, setShow] = useState(false);
@@ -109,8 +110,6 @@ export default function Home() {
 								</div>
 							</section>
 							<RecentWork></RecentWork>
-
-							{/* <Contatctus></Contatctus> */}
 						</div>
 
 						{/* end content */}
@@ -138,13 +137,17 @@ const RecentWork = () => {
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 							className='transition-link'>
 							{' '}
+							<div className='player-wrapper'>
+								<ReactPlayer
+									className='react-player'
+									url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
+									playing
+									muted
+									loop
+									width='100%'
+								/>
+							</div>
 							{/* <img src='images/work-single-1.jpg' alt='' /> */}
-							<ReactPlayer
-								url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-								playing
-								muted
-								loop
-							/>
 							<div className='title-holder'>
 								<h3>NOT YOU</h3>
 								<p className='large'> AGAIN</p>
@@ -153,19 +156,21 @@ const RecentWork = () => {
 						</a>{' '}
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
-						<a
-							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
-							className='transition-link'>
+						{' '}
+						{/* * <ReactPlayer videoId='3oJ2WXg0E8g'></ReactPlayer> */}
+						<div className='player-wrapper'>
 							<ReactPlayer
+								className='react-player'
 								url='https://www.youtube.com/watch?v=3oJ2WXg0E8g'
 								light
+								width='100%'
 							/>{' '}
-							<div className='title-holder right'>
-								<h3>FEAR</h3>
-								<p className='large'>ONE MINUTE SHORT FILM</p>
-							</div>
-							<div className='overlay' />
-						</a>
+						</div>
+						<div className='title-holder right'>
+							<h3>FEAR</h3>
+							<p className='large'>ONE MINUTE SHORT FILM</p>
+						</div>
+						<div className='overlay' />
 					</div>
 					<div className='element clearfix col-sm-6 home travel'>
 						{' '}
@@ -174,7 +179,13 @@ const RecentWork = () => {
 							data-title='Image Title'
 							className='transition-link'>
 							{' '}
-							<ReactPlayer url='https://www.youtube.com/watch?v=C3OKSJd3w6c' />{' '}
+							<div className='player-wrapper'>
+								<ReactPlayer
+									url='https://www.youtube.com/watch?v=C3OKSJd3w6c'
+									className='react-player'
+									width='100%'
+								/>{' '}
+							</div>
 							<div className='title-holder'>
 								<h3>Magazine Cover</h3>
 								<p className='large'>Inventory</p>
@@ -187,7 +198,14 @@ const RecentWork = () => {
 						<a
 							href='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 							className='transition-link'>
-							<ReactPlayer url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU' />{' '}
+							<div className='player-wrapper'>
+								{' '}
+								<ReactPlayer
+									url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
+									className='react-player'
+								/>{' '}
+							</div>
+
 							<div className='title-holder right'>
 								<h3>Not you</h3>
 								<p className='large'> Again</p>
@@ -200,9 +218,9 @@ const RecentWork = () => {
 			<div className='container clearfix'>
 				<div className='col-lg-12 white-text centered'>
 					<p>
-						<a href='portfolio.html' title className='arrow'>
+						<Link href='/portfolio' title className='arrow'>
 							View All
-						</a>
+						</Link>
 					</p>
 				</div>
 			</div>
