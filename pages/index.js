@@ -208,6 +208,7 @@ const RecentWork = () => {
 								<ReactPlayer
 									url='https://www.youtube.com/watch?v=IV0mqCxQ5ZU'
 									className='react-player'
+									width='100%'
 									light
 								/>{' '}
 							</div>
