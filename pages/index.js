@@ -72,7 +72,7 @@ export default function Home() {
 												transform: 'translate3d(0px, 0px, 0px)',
 												height: '100vh',
 											}}>
-											<source src='./Low res video.mp4' type='video/mp4' />
+											<source src='./Gulf Star overseas.mp4' type='video/mp4' />
 										</video>
 									</div>
 								</div>
